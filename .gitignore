@@ -1,0 +1,15 @@
+.idea
+.venv
+venv
+env
+myenv
+*.pyc
+*.mo
+/media
+/static
+tmp
+dist
+build
+requirements.txt
+db.sqlite3
+*.egg-info

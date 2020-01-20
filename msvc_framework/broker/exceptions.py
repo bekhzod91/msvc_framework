@@ -1,0 +1,2 @@
+class BrokerStatusFail(Exception):
+    pass
