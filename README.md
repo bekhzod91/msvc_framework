@@ -1,5 +1,9 @@
-# Django for microservice
+# Microservice tools for django
 
+### Install
+```
+pip install msvc_framework
+```
 
 settings.py
 
