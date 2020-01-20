@@ -1,13 +1,13 @@
 # Microservice tools for django
 
 ### Install
-```
+```shell
 pip install msvc_framework
 ```
 
 settings.py
 
-``` 
+```python
 INSTALL_APP = [
     ...,
     'msvc_framework',
@@ -22,7 +22,7 @@ MSVC_FRAMEWORK = {
 
 ### Service 1
 register tasks in apps/{appname}/tasks.py
-```
+```python
 from msvc_framework import tasks
 from msvc_framework import SUCCESS
 
@@ -37,7 +37,7 @@ def get_users(data):
 
 
 run command
-```
+```shell
 python manange.py subscribe
 ```
 
@@ -45,7 +45,7 @@ python manange.py subscribe
 ### Service 2
 
 sync call tasks
-```
+```python
 from msvc_framework import call
 
 call('user.user.get', {'ids': [1]})
@@ -53,7 +53,7 @@ call('user.user.get', {'ids': [1]})
 
 
 use in model
-```
+```python
 from msvc_framework import call
 
 class Profile(models.Model):
@@ -70,7 +70,7 @@ print(profile.user.value)
 
 use in Serializer
 
-```
+```python
 from msvc_framework import ModelSerializer
 
 class ProfileSerializer(ModelSerializer):
@@ -87,7 +87,7 @@ Please make sure to update tests as appropriate.
 
 ## How to deploy
 Create config file in home directory `~/.pypirc`
-```
+```text
 [distutils] 
 index-servers=pypi
 [pypi] 
