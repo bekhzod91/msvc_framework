@@ -45,7 +45,7 @@ class KafkaBrokerProducer(BrokerProducer):
 
     def send(self, data):
         send_data = json.dumps(data).encode('utf-8')
-        self.producer.send(kafka_topic, send_data)
+        self.producer.send(kafka_topic, send_data).get(timeout=10)
 
     def call(self, path: str, data: dict):
         reply_to = str(uuid.uuid4())
