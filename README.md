@@ -44,11 +44,13 @@ python manange.py subscribe
 
 ### Service 2
 
-sync call tasks
+#### Sync call tasks
+
 ```python
 from msvc_framework import call
 
-call('user.user.get', {'ids': [1]})
+data = call('user.user.get', {'ids': [1]})
+print(data)
 ```
 
 
@@ -78,6 +80,14 @@ class ProfileSerializer(ModelSerializer):
         model = Merchant
         fields = ('id', 'user', )
 
+```
+
+#### Async call tasks
+
+```python
+from msvc_framework import async_call
+
+async_call('user.user.get', {'ids': [1]})
 ```
 
 ## Contributing
